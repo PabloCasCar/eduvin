@@ -1,0 +1,285 @@
+/* Reset Document */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+  body {
+    font-size: 100%;
+    font-family: sans-serif;
+  }
+
+  div, section, span, ul, li, a {
+    box-sizing: border-box;
+  }
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2.5em;
+  }
+  #menu li {
+    list-style: none;
+    display: inline-block;
+    margin: 1rem;
+  }
+  #menu li a{
+      color: #fff;
+      padding: 0.5rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 3px;
+      text-shadow: 3px 3px 5px black;
+  }
+
+  #logo {
+    max-height: 6rem;
+  
+  }
+
+  header {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    align-items: center;
+    background-color: rgb(24, 23, 23);
+    position: fixed;
+    z-index: 999;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  menu li a:hover {
+    color: black;
+    background-color: #fff;
+  }
+  section {
+    width: 100%;
+   
+  }
+
+  #inicio {
+    background-color: #202020;
+    padding: 6rem 0 0 0;
+    height: auto;
+  }
+  #inicio img {
+    object-fit: cover;
+    width: 85%;
+    aspect-ratio: 16/9;
+  }
+  
+  #roupas {
+    background-color: #272626;
+    color: #fff;
+  }
+  #acessorios {
+    background-color: #4d4b4b;
+    color: #fff;
+  }
+  #sobrenos {
+    background-color: #636262;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    height: 50em;
+    align-items: center;
+    vertical-align: middle;
+    width: 100%;
+    
+  }
+
+  #sede {
+    width: 100%;
+  }
+
+  #contactos {
+    background-color: #7e7b7b;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    
+  }
+
+  h1 {
+    text-align: center;
+    padding: 8rem; 
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  #cards {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .card_tshirts {
+    background-color: #494848;
+    color:#fff;
+    margin: 1.1em 1em;
+    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 240px;
+    display: inline-block;
+
+  }
+
+  .card_container h4 {
+
+    display: inline-block;
+  }
+
+  .card_container {
+    padding: 1em 1.2em;
+  }
+
+  .card_tshirts img {
+    border-radius: 5px 5px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+.preço {
+
+  font-weight: bold;
+  color: black;
+}
+
+  .card_tshirts:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
+    scale: 1.02;
+    rotate: 2deg;
+  }
+  .card_calcas {
+    background-color: #494848;
+    color:#fff;
+    margin: 1.1em 1em;
+    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 240px;
+    display: inline-block;
+  }
+  .card_container {
+    padding: 1em 1.2em;
+  }
+  .card_calcas img {
+    border-radius: 5px 5px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  .card_container h4 {
+
+    display: inline-block;
+  }
+  .card_calcas:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
+    scale: 1.02;
+    rotate: 2deg;
+  }
+  .card_casacos {
+    background-color: #494848;
+    color:#fff;
+    margin: 1.1em 1em;
+    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 240px;
+    display: inline-block;
+  }
+  .card_container {
+    padding: 1em 1.2em;
+  }
+  .card_casacos img {
+    border-radius: 5px 5px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  .card_container h4 {
+
+    display: inline-block;
+  }
+  .card_casacos:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
+    scale: 1.02;
+    rotate: 2deg;
+  }
+  .card_acessorios {
+    background-color: #494848;
+    color:#fff;
+    margin: 1.1em 1em;
+    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 240px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+  }
+  .card_container {
+    padding: 1em 1.2em;
+  }
+  .card_acessorios img {
+    border-radius: 5px 5px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  .card_container h4 {
+
+    display: inline-block;
+  }
+  .card_acessorios:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
+    scale: 1.02;
+    rotate: 2deg;
+  }
+
+  .text {
+
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .linha{
+
+    padding: 0 5rem 5rem 5rem;
+  }
+
+  .coluna {
+    vertical-align: middle;
+
+    width: 49%;
+    min-width: 300px;
+    display: inline-block;
+  }
+
+  
+  .job-title {
+    color: #999999;
+    font-weight: bold;
+  }
+  
+  a:link, a:visited {
+    color: #fb6542;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+

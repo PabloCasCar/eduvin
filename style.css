@@ -11,26 +11,25 @@
 
   div, section, span, ul, li, a {
     box-sizing: border-box;
-    text-decoration: none;
-    color: #030303;
-    font-style: oblique;
   }
-
-  .menu {
-    padding: 0.5em 1em;
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2.5em;
   }
-
-  .menu li {
+  #menu li {
     list-style: none;
     display: inline-block;
-    padding: 1em;
+    margin: 1rem;
   }
-  .menu li a{
+  #menu li a{
       color: #fff;
+      padding: 0.5rem;
       text-decoration: none;
       font-size: 1.2rem;
+      border-radius: 3px;
       text-shadow: 3px 3px 5px black;
-      transition: 0.2s;
   }
 
   #logo {
@@ -39,72 +38,54 @@
   }
 
   header {
-    width: 100%;
+    width: 95%;
     display: flex;
-    color: #fff;
     justify-content: space-between;
+    padding: 1rem 2.5rem;
     align-items: center;
-    background-color:  rgb(77, 76, 76);
+    background-color: rgb(24, 23, 23);
+    position: fixed;
+    z-index: 999;
   }
-
-
-
-  header img {
-    padding: 0.5em 1em;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
-  .menu li a:hover {
+  menu li a:hover {
     color: black;
-    border: 2px solid transparent;
     background-color: #fff;
-    border-radius: 0.5em;
-    padding: 0.5em;
   }
   section {
     width: 100%;
-   height: 60em;
-  }
-
-  hr {
-    border: 4px solid rgb(24, 23, 23);
-    border-radius: 0.5em;
-    background-color: rgb(24, 23, 23);
-    width: 65%;
-    margin: 0 auto;
+   
   }
 
   #inicio {
+    background-color: #202020;
+    padding: 6rem 0 0 0;
     height: auto;
   }
   #inicio img {
     object-fit: cover;
-    width: 100%;
+    width: 85%;
     aspect-ratio: 16/9;
   }
   
   #roupas {
-    background-color: white;
-    color: rgb(24, 23, 23);
-    height: 30em;
+    background-color: #272626;
+    color: #fff;
   }
   #acessorios {
-    background-color: white;
-    color: rgb(24, 23, 23);
-    height: 30em;
+    background-color: #4d4b4b;
+    color: #fff;
   }
   #sobrenos {
-    background-color: white;
-    color: rgb(3, 3, 3);
-    text-shadow: #161616;
+    background-color: #636262;
+    color: #fff;
     text-align: center;
     text-decoration: none;
-    font-size: large;
-    height: auto;
-    list-style: none;
+    font-size: medium;
+    height: 50em;
     align-items: center;
     vertical-align: middle;
     width: 100%;
@@ -112,22 +93,21 @@
   }
 
   #sede {
-    width: 50%;
+    width: 100%;
   }
 
   #contactos {
-    background-color: rgb(77, 76, 76);
-    color: white;
+    background-color: #7e7b7b;
+    color: #fff;
     text-align: center;
     text-decoration: none;
     font-size: medium;
-    height: 10em;
-    list-style: none;
+    
   }
 
   h1 {
     text-align: center;
-    padding: 2rem; 
+    padding: 8rem; 
   }
   
   h2 {
@@ -141,7 +121,7 @@
     flex-wrap: wrap;
   }
   .card_tshirts {
-    background-color: rgb(95, 94, 94);
+    background-color: #494848;
     color:#fff;
     margin: 1.1em 1em;
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
@@ -172,7 +152,7 @@
 .preço {
 
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: black;
 }
 
   .card_tshirts:hover {
@@ -181,7 +161,7 @@
     rotate: 2deg;
   }
   .card_calcas {
-    background-color: rgb(95, 94, 94);
+    background-color: #494848;
     color:#fff;
     margin: 1.1em 1em;
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
@@ -210,7 +190,7 @@
     rotate: 2deg;
   }
   .card_casacos {
-    background-color: rgb(95, 94, 94);
+    background-color: #494848;
     color:#fff;
     margin: 1.1em 1em;
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
@@ -238,12 +218,8 @@
     scale: 1.02;
     rotate: 2deg;
   }
-  
-  .card_container {
-    padding: 1em 1.2em;
-
-  }.card_acessorios {
-    background-color: rgb(95, 94, 94);
+  .card_acessorios {
+    background-color: #494848;
     color:#fff;
     margin: 1.1em 1em;
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
@@ -254,6 +230,9 @@
     display: inline-block;
     align-items: center;
     justify-content: center;
+  }
+  .card_container {
+    padding: 1em 1.2em;
   }
   .card_acessorios img {
     border-radius: 5px 5px 0px 0px;
@@ -261,190 +240,46 @@
     width: 100%;
     aspect-ratio: 16/9;
   }
+  .card_container h4 {
+
+    display: inline-block;
+  }
   .card_acessorios:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
     scale: 1.02;
     rotate: 2deg;
   }
 
-  .card_calcados {
-    background-color: rgb(95, 94, 94);
-    color:#fff;
-    margin: 1.1em 1em;
-    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
-    transition: 0.3s;
-    border-radius: 5px;
-    width: 30%;
-    min-width: 240px;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-  }
-  .card_calcados img {
-    border-radius: 5px 5px 0px 0px;
-    object-fit: cover;
-    width: 100%;
-    aspect-ratio: 16/9;
-  } 
-  .card_calcados {
-    background-color: rgb(95, 94, 94);
-    color:#fff;
-    margin: 1.1em 1em;
-    box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
-    transition: 0.3s;
-    border-radius: 5px;
-    width: 30%;
-    min-width: 240px;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
+  .text {
+
+    font-weight: bold;
+    font-size: large;
   }
 
-  .card_calcados:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0,2);
-    scale: 1.02;
-    rotate: 2deg;
-  }
-  .card_container h4 {
+  .linha{
 
+    padding: 0 5rem 5rem 5rem;
+  }
+
+  .coluna {
+    vertical-align: middle;
+
+    width: 49%;
+    min-width: 300px;
     display: inline-block;
   }
 
-.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-}
-
-.nav a:hover {
-    background-color: #2c2c2c;
-}
-
-.login-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
-  height: 60vh;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.login-container h2 {
-  margin-bottom: 20px;
-  color: #000000;
-}
-
-.input-group {
-  margin-bottom: 15px;
-  text-align: left;
-  width: 100%;
-}
-
-.input-group label {
-  display: block;
-  color: #000000;
-  margin-bottom: 5px;
-}
-
-.input-group input[type="text"],
-.input-group input[type="password"] {
-  width: 100%;
   
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-}
+  .job-title {
+    color: #999999;
+    font-weight: bold;
+  }
+  
+  a:link, a:visited {
+    color: #fb6542;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
 
-.input-group.remember-me {
-  display: flex;
-  align-items: center;
-}
-
-.input-group.remember-me input {
-  margin: 0;
-  margin-right: 5px;
-}
-
-button {
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background-color: #333333;
-}
-
-footer {
-  background-color: rgb(24, 23, 23);
-}
-
-
-.footer-links {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: #000000;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-
-
-
-.product-container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.product-container img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-.product-container h1 {
-  font-size: 24px;
-  margin: 20px 0;
-}
-
-.product-container p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.product-container button {
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.product-container button:hover {
-  background-color: #333;
-}

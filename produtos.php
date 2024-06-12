@@ -1,4 +1,5 @@
 <?php include('ligacao.php');?>
+<?php include('cabecalho.php');?>
 
 <?php
 $servername = "localhost";

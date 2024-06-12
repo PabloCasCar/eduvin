@@ -12,8 +12,6 @@
         <script src="js/slideshow.js" defer></script>
     </head>
     <body>
-        
-    <?php include_once('menu.php');?>
 
     <?php include('cabecalho.php');?>
 

@@ -76,7 +76,7 @@
         </div>
             <a href="">
                 <div class="card_acessorios">
-                <img src="images/sapatilhas-p-6000-2FBrXk.png" alt="T-shirts">
+                <img src="images/teniseduvin.webp" alt="T-shirts">
                 <div class="card_container">
                     <h4>Calçados Vintage</h4>
                     <p>Calçados: 20 até o 50</p>

@@ -12,8 +12,6 @@
         <script src="js/slideshow.js" defer></script>
     </head>
     <body>
-        
-    <?php include_once('menu.php');?>
 
     <?php include('cabecalho.php');?>
 
@@ -28,7 +26,7 @@
         <section id="roupas">
             <hr>
             <h1>Roupas</h1>
-            <a href="">
+            <a href="produtos.php?id=1">
                 <div id="cards">
                 <div class="card_tshirts">
                     <img src="images/tshirts.png" alt="t-shirts">
@@ -40,7 +38,7 @@
             </a>
         
                 </div>
-            <a href="">
+            <a href="produtos.php?id=2">
                 <div class="card_calcas">
                     <img src="images/calcas.png" alt="calcas">
                     <div class="card_container">
@@ -51,7 +49,7 @@
                 </a>
                 
             </div>
-                <a href="">
+                <a href="produtos.php?id=3">
                     <div class="card_casacos">
                     <img src="images/casaco.png" alt="casacos">
                     <div class="card_container">
@@ -66,7 +64,7 @@
     
         <section id="acessorios">
             <h1>Acessórios e Calçados</h1>
-            <a href="">
+            <a href="produtos.php?id=4">
                 <div class="card_acessorios">
                 <img src="images/acessorios.png" alt="T-shirts">
                 <div class="card_container">
@@ -76,9 +74,9 @@
                 </div>
             </a>
         </div>
-            <a href="">
+            <a href="produtos.php?id=5">
                 <div class="card_acessorios">
-                <img src="images/sapatilhas-p-6000-2FBrXk.png" alt="T-shirts">
+                <img src="images/tenisnike.avif" alt="T-shirts">
                 <div class="card_container">
                     <h4>Calçados Vintage</h4>
                     <p>Calçados: 20 até o 50</p>
@@ -105,4 +103,4 @@
 
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
-</html>    
+</html>  

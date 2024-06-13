@@ -2,11 +2,10 @@
 <?php include('ligacao.php');?>
 
 <?php
-session_start();
 
 // Configurações do banco de dados
 $servername = "localhost";
-$username = "root";
+$nomename = "root";
 $password = "";
 $dbname = "eduvin_shop";
 $telefone = "";
@@ -14,7 +13,7 @@ $email = "";
 $endereco = "";
 
 // Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $nomename, $password, $dbname);
 
 // Verifica a conexão
 if ($conn->connect_error) {
@@ -23,9 +22,9 @@ if ($conn->connect_error) {
 
 // Processa o formulário de registro
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-    $confirm_pass = $_POST['confirm_password'];
+    $nome = $_POST['nome'];
+    /*$pass = $_POST['password'];
+    $confirm_pass = $_POST['confirm_password'];*/
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $endereco = $_POST['endereço'];
@@ -34,18 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "As senhas não correspondem.";
     } else {
         // Evita SQL injection
-        $user = $conn->real_escape_string($user);
+        $nome = $conn->real_escape_string($nome);
         $pass = password_hash($conn->real_escape_string($pass), PASSWORD_BCRYPT);
 
         // Verifica se o usuário já existe
-        $sql = "SELECT * FROM users WHERE username='$user'";
+        $sql = "SELECT * FROM clientes WHERE nome='$nome'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             echo "Usuário já existe.";
         } else {
             // Insere o novo usuário no banco de dados
-            $sql = "INSERT INTO users (username, password) VALUES ('$user', '$pass')";
+            $sql = "INSERT INTO clientes (nome, password) VALUES ('$nome', '$pass')";
             if ($conn->query($sql) === TRUE) {
                 echo "Registro realizado com sucesso!";
                 header("Location: login.php");
@@ -66,133 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Registrar</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body {
-  align-items: center;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}
 
-.form {
-  background-color: white;
-  border-radius: 40px;
-  box-sizing: border-box;
-  height: 500px;
-  padding: 40px;
-  width: 320px;
-}
 
-.title {
-  color: Black;
-  font-family: sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  margin-top: 30px;
-}
 
-.subtitle {
-  color: Black;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.input-container {
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.ic1 {
-  margin-top: 40px;
-}
-
-.ic2 {
-  margin-top: 30px;
-}
-
-.input {
-  background-color: black;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: white;
-  font-size: 18px;
-  height: 100%;
-  outline: 0;
-  padding: 4px 20px 0;
-  width: 100%;
-}
-
-.cut {
-  background-color: white;
-  border-radius: 10px;
-  height: 20px;
-  left: 20px;
-  position: absolute;
-  top: -20px;
-  transform: translateY(0);
-  transition: transform 200ms;
-  width: 76px;
-}
-
-.cut-short {
-  width: 50px;
-}
-
-.input:focus ~ .cut,
-.input:not(:placeholder-shown) ~ .cut {
-  transform: translateY(8px);
-}
-
-.placeholder {
-  color: white;
-  font-family: sans-serif;
-  left: 20px;
-  line-height: 14px;
-  pointer-events: none;
-  position: absolute;
-  transform-origin: 0 50%;
-  transition: transform 200ms, color 200ms;
-  top: 20px;
-}
-
-.input:focus ~ .placeholder,
-.input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-30px) translateX(10px) scale(0.75);
-}
-
-.input:not(:placeholder-shown) ~ .placeholder {
-  color: white;
-}
-
-.input:focus ~ .placeholder {
-  color: #dc2f55;
-}
-
-.submit {
-  background-color: white;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: black;
-  cursor: pointer;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 38px;
-  // outline: 0;
-  text-align: center;
-  width: 100%;
-}
-
-.submit:active {
-  background-color: #06b;
-}
-
-</style>
 <body>
     <div class="register-container">
     <div class="form">

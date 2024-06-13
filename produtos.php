@@ -1,35 +1,34 @@
-<?php include('ligacao.php');?>
-<?php include('cabecalho.php');?>
+<?php 
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sua_base_de_dados";
+include('ligacao.php');
+include('cabecalho.php');
 
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+// Check if the 'id' key exists in the $_GET array
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    echo "ID do produto não especificado.";
+    exit();
 }
 
-// Obtém o ID do produto da URL
-$produto_id = $_GET['id'];
+$produtos_id = $_GET['id'];
+
+// Ensure the database connection is set up
+if (!isset($ligacao) || $ligacao->connect_error) {
+    echo "Erro ao conectar ao banco de dados.";
+    exit();
+}
 
 // Obtém os detalhes do produto do banco de dados
-$sql = "SELECT * FROM products WHERE id='$produto_id'";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM produtos WHERE id='$produtos_id'";
+$result = $ligacao->query($sql);
 
 if ($result->num_rows > 0) {
-    $produto = $result->fetch_assoc();
+    $produto = $result->fetch_assoc(); // Store the fetched product details in $produto
 } else {
     echo "Produto não encontrado.";
     exit();
 }
 
-$conn->close();
+$ligacao->close();
 ?>
 
 <!DOCTYPE html>
@@ -37,28 +36,19 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $produto['name']; ?></title>
+    <title><?php echo htmlspecialchars($produto['nome']); ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="index.php"><img id="logo" src="images/EDUVIN.png" alt="Eduvin's logo"></a>
-        <ul id="menu">
-            <li><a href="index.php#inicio">Inicio</a></li>
-            <li><a href="index.php#roupas">Roupas</a></li>
-            <li><a href="index.php#acessorios">Acessórios</a></li>
-            <li><a href="index.php#sobrenos">Sobre nós</a></li>
-            <li><a href="index.php#contactos">Contactos</a></li>
-        </ul>
-    </header>
-    <main>
-        <div class="product-container">
-            <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
-            <h1><?php echo $produto['nome']; ?></h1>
-            <p><?php echo $produto['descrição']; ?></p>
-            <p>Preço: €<?php echo $produto['preço']; ?></p>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-    </main>
+    <div class="produto-detalhes">
+        <h1><?php echo htmlspecialchars($produto['nome']); ?></h1>
+        <p>Preço: €<?php echo number_format($produto['preco'], 2); ?></p>
+        <p>Quantidade em estoque: <?php echo $produto['quantidade_estoque']; ?></p>
+        <form action="carrinho.php" method="POST">
+            <input type="hidden" name="acao" value="add">
+            <input type="hidden" name="id" value="<?php echo $produto['id']; ?>">
+            <button type="submit">Adicionar ao Carrinho</button>
+        </form>
+    </div>
 </body>
 </html>

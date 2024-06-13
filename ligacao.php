@@ -9,5 +9,5 @@ $dbname = "eduvin_shop";
         session_start();
     }
 
-    $ligacao = mysqli_connect('localhost', 'root', '', 'eduvin_shop', 3306);
+    $ligacao = mysqli_connect('localhost', 'root', '', 'eduvin_shop');
 ?>

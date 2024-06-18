@@ -71,27 +71,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="register-container">
     <div class="form">
-      <div class="title">Olá</div>
+      <div class="title">Olá,</div>
       <div class="subtitle">Vamos criar a sua conta!</div>
       <div class="input-container ic1">
-        <input id="firstname" class="input" type="text" placeholder=" " />
+        <input id="firstname" class="input" type="text" placeholder="Primeiro nome" />
         <div class="cut"></div>
-        <label for="firstname" class="placeholder">Primeiro nome</label>
+        <label for="firstname" class="placeholder"></label>
       </div>
       <div class="input-container ic2">
-        <input id="lastname" class="input" type="text" placeholder=" " />
+        <input id="lastname" class="input" type="text" placeholder="Último nome " />
         <div class="cut"></div>
-        <label for="lastname" class="placeholder">Último nome</label>
+        <label for="lastname" class="placeholder"></label>
       </div>
       <div class="input-container ic2">
-        <input id="email" class="input" type="text" placeholder=" " />
+        <input id="email" class="input" type="text" placeholder="Email " />
         <div class="cut cut-short"></div>
-        <label for="email" class="placeholder">Email</>
+        <label for="email" class="placeholder"></>
       </div>
       <div class="input-container ic2">
-        <input id="password" class="input" type="text" placeholder=" " />
+        <input id="password" class="input" type="text" placeholder="Password " />
         <div class="cut cut-short"></div>
-        <label for="password" class="placeholder">Password</>
+        <label for="password" class="placeholder"></>
       </div>
       <button type="text" class="submit">Registar</button>
     </div>

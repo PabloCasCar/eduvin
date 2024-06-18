@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Jun-2024 às 13:46
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 17-Jun-2024 às 11:21
+-- Versão do servidor: 10.4.32-MariaDB
+-- versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,13 +29,14 @@ USE `eduvin_shop`;
 -- Estrutura da tabela `clientes`
 --
 
+DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `telefone` varchar(20) DEFAULT NULL,
   `endereco` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `clientes`
@@ -56,22 +57,23 @@ INSERT INTO `clientes` (`id`, `nome`, `email`, `telefone`, `endereco`) VALUES
 -- Estrutura da tabela `itens_pedido`
 --
 
+DROP TABLE IF EXISTS `itens_pedido`;
 CREATE TABLE `itens_pedido` (
   `id` int(11) NOT NULL,
   `pedido_id` int(11) DEFAULT NULL,
   `produto_id` int(11) DEFAULT NULL,
   `quantidade` int(11) DEFAULT NULL,
   `preco_unitario` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `itens_pedido`
 --
 
 INSERT INTO `itens_pedido` (`id`, `pedido_id`, `produto_id`, `quantidade`, `preco_unitario`) VALUES
-(1, 1, 1, 2, '29.99'),
-(2, 1, 2, 1, '59.99'),
-(3, 2, 2, 3, '59.99');
+(1, 1, 1, 2, 29.99),
+(2, 1, 2, 1, 59.99),
+(3, 2, 2, 3, 59.99);
 
 -- --------------------------------------------------------
 
@@ -79,12 +81,13 @@ INSERT INTO `itens_pedido` (`id`, `pedido_id`, `produto_id`, `quantidade`, `prec
 -- Estrutura da tabela `pedidos`
 --
 
+DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
   `cliente_id` int(11) DEFAULT NULL,
   `data_pedido` date DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `pedidos`
@@ -100,27 +103,25 @@ INSERT INTO `pedidos` (`id`, `cliente_id`, `data_pedido`, `status`) VALUES
 -- Estrutura da tabela `produtos`
 --
 
+DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `descricao` text DEFAULT NULL,
   `preco` decimal(10,2) DEFAULT NULL,
-  `quantidade_estoque` int(11) DEFAULT NULL,
-  `tipo` varchar(50) NOT NULL,
-  `imagem` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `quantidade_estoque` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `preco`, `quantidade_estoque`, `imagem`) VALUES
-(1, 'T-shirt Vintage', 20.00, 50, 'images/tshirts.png' ),
-(2, 'Calças Cargo', 30.00, 30, 'images/calcas.png'),
-(3, 'Casaco Vintage', NULL, 35.00, 50, 'images/casaco.png'),
-(4, 'Acessórios Vintage', NULL, 10.00, 70, 'images/acessorios.png'),
-(5, 'Ténis Vintage', NULL, 60.00, 100, 'images/tenisnike.avif');
-
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `quantidade_estoque`) VALUES
+(1, 'T-shirt Vintage', '', 20.00, 50),
+(2, 'Calças Cargo', '', 30.00, 30),
+(3, 'Casaco Vintage', NULL, 35.00, 50),
+(4, 'Acessórios Vintage', NULL, 10.00, 70),
+(5, 'Ténis Vintage', NULL, 60.00, 100);
 
 --
 -- Índices para tabelas despejadas
@@ -179,7 +180,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas

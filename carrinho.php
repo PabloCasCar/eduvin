@@ -1,6 +1,8 @@
 <?php 
 include('ligacao.php');
 include('cabecalho.php');
+include('confirm_compra.php');
+
 
 function resumoCarrinho() {
     $cart = $_SESSION['carrinho'] ?? array();
@@ -124,3 +126,4 @@ $total = 0;
     </div>
 </body>
 </html>
+
